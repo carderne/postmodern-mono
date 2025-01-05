@@ -7,6 +7,9 @@ test = "pytest"
 # run all the above
 all = [ {ref="fmt"}, {ref="lint"}, {ref="check"}, {ref="test"} ]
 
+"ci:fmt" = "ruff format --check"  # fail if not formatted
+"ci:lint" = "ruff check"
+
 [project]
 name = "postmodern"
 version = "0.1.0"

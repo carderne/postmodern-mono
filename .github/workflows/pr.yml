@@ -5,6 +5,10 @@ on:
 jobs:
   test-server:  # you should test the other packages too
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/server
+
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
