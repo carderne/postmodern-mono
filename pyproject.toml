@@ -1,14 +1,16 @@
 [tool.poe.tasks]
 # run with eg `uv run poe fmt`
-fmt = "ruff format"
-lint = "ruff check --fix"
-check = "basedpyright"
-test = "pytest"
+fmt = "ruff format ${PWD}"
+lint = "ruff check --fix ${PWD}"
+check = "basedpyright ${PWD}"
+test = "pytest ${PWD}"
 # run all the above
 all = [ {ref="fmt"}, {ref="lint"}, {ref="check"}, {ref="test"} ]
 
-"ci:fmt" = "ruff format --check"  # fail if not formatted
-"ci:lint" = "ruff check"
+echo = "echo ${PWD}"
+
+"ci:fmt" = "ruff format --check ${PWD}"  # fail if not formatted
+"ci:lint" = "ruff check ${PWD}"
 
 [project]
 name = "postmodern"
