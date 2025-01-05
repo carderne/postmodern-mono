@@ -1,8 +1,8 @@
-from mylib import greeter
+from postmodern.greeter import greet
 
 
 def main():
-    msg = greeter.make()
+    msg = greet()
     print(msg)
 
 

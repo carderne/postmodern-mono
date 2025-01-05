@@ -1,20 +1,27 @@
+[tool.poe.tasks]
+# run with eg `uv run poe fmt`
+fmt = "ruff format"
+lint = "ruff check --fix"
+check = "basedpyright"
+test = "pytest"
+# run all the above
+all = [ {ref="fmt"}, {ref="lint"}, {ref="check"}, {ref="test"} ]
+
 [project]
-name = "mono"
+name = "postmodern"
 version = "0.1.0"
-description = "Add your description here"
+description = "Example monorepo using uv"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 dependencies = []
 
 [dependency-groups]
 dev = [
-    "basedpyright>=1.23.1",
-    "pytest>=8.3.4",
-    "ruff>=0.8.5",
+    "basedpyright >= 1.23.1",
+    "poethepoet>=0.32.0",
+    "pytest >= 8.3.4",
+    "ruff >= 0.8.5",
 ]
 
 [tool.uv.workspace]
-members = ["mylib", "myserver", "unused"]
-
-[tool.uv.sources]
-mylib = { workspace = true }
+members = ["libs/*", "apps/*"]

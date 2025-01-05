@@ -1,0 +1,17 @@
+name: pr
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+jobs:
+  test-server:  # you should test the other packages too
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          version: "0.5.14"
+      - run: uv sync --all-extras --locked --package=postmodern-server
+      - run: uv run poe ci:fmt             # check formatting is correct
+      - run: uv run poe ci:lint            # and linting
+      - run: uv run poe check              # typecheck too
+      - run: uv run poe test               # then run your tests!

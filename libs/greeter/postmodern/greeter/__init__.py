@@ -1,6 +1,6 @@
 from cowsay import say
 
 
-def make() -> str:
+def greet() -> str:
     msg = say("Hello!")
     return msg
