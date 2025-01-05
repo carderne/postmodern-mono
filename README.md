@@ -13,7 +13,7 @@ And builds on the single-package repo example at [carderne/postmodern-python](ht
 4. Run `uv sync --all-packages`
 5. Have a look at the stuff below here, try out some commands and edit this README as you like!
 
-## 🧱 Development
+## Development
 Clone:
 ```bash
 git clone git@github.com:carderne/postmodern-mono.git
@@ -30,7 +30,6 @@ uv sync --all-packages
 ```
 
 Read on below...
-```
 
 ## Structure
 There are three packages split into libs and apps:
