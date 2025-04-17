@@ -92,7 +92,7 @@ This is not very useful.
 
 You can add an alias to your `.bashrc`/`.zshrc` if you like:
 ```bash
-alias uvs="uv sync --all-packages
+alias uvs="uv sync --all-packages"
 ```
 
 ## Dependencies
